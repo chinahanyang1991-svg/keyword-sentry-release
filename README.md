@@ -10,23 +10,23 @@
 
 | 文件 | 大小 | 怎么用 |
 | --- | --- | --- |
-| `KeywordSentry_0.1.0_win64.exe` | 11,227,136 字节（约 10.7 MB） | 免安装。放到任意目录双击就开 |
-| `KeywordSentry_0.1.0_x64-setup.exe` | 3,784,686 字节（约 3.6 MB） | 安装版。开始菜单加图标，可在"设置→应用"里卸载 |
-| `KeywordSentry_0.1.0_x64_zh-CN.msi` | 6,287,360 字节（约 6.0 MB） | 给批量分发用：`msiexec /i KeywordSentry_0.1.0_x64_zh-CN.msi` |
+| `KeywordSentry_0.2.0_win64.exe` | 11,271,168 字节（约 10.8 MB） | 免安装。放到任意目录双击就开 |
+| `KeywordSentry_0.2.0_x64-setup.exe` | 3,796,935 字节（约 3.6 MB） | 安装版。开始菜单加图标，可在"设置→应用"里卸载 |
+| `KeywordSentry_0.2.0_x64_zh-CN.msi` | 6,307,840 字节（约 6.0 MB） | 给批量分发用：`msiexec /i KeywordSentry_0.2.0_x64_zh-CN.msi` |
 
 附件名用英文是 GitHub 上传接口不接受中文文件名；软件界面、窗口标题、导出数据里的内容全是中文，不受影响。
 
 下载后建议先核对摘要再运行：
 
-- `KeywordSentry_0.1.0_win64.exe`
-  SHA-256 `0b9976853bc8f850ffe6667e11efb288378c6eb46f32fa31def0ebcc7d4ed7e5`
-  MD5 `ea8eb778d41d488ec8e556dbc227feb9`
-- `KeywordSentry_0.1.0_x64-setup.exe`
-  SHA-256 `50ae70843a3d99428ba83fabefce1ecf36589d80cbcd6974791133ef29870844`
-  MD5 `bec1e4c3a87ca482503ce933555562f0`
-- `KeywordSentry_0.1.0_x64_zh-CN.msi`
-  SHA-256 `2ba5ab6235959dfe494de449900beada665d585aca70826af20d2bcbe58f4f51`
-  MD5 `08b1d81fa8ca7226a0ce1cb3c6a72ed8`
+- `KeywordSentry_0.2.0_win64.exe`
+  SHA-256 `4dbef493d0113597c8bf02fbc4a8f22f955f522d7c7c817b5227c3331fbb4bff`
+  MD5 `e7fd9e48fdc1ec243e7a71b3b1b30ae5`
+- `KeywordSentry_0.2.0_x64-setup.exe`
+  SHA-256 `79f5429b559ea8fd7b479cf7e23f37a1da9731bac41b7e2b765085e44d0d3b2e`
+  MD5 `f2e1f8b0f848dfca6db08aca163d703f`
+- `KeywordSentry_0.2.0_x64_zh-CN.msi`
+  SHA-256 `7917c6fe9b3b58400a21bfc2fd6023215f11416eb1a4fc15f5ad833d03c8d9aa`
+  MD5 `3144ee460e94604d6fb1c34e7f78a8a8`
 
 ## 运行要求
 
@@ -51,14 +51,14 @@
 
 ## 使用说明
 
-完整的功能说明、每个设置项的含义、以及本轮测试的复验记录，在源码仓库的 `发布版/使用说明.md`，共十一节。
+完整的功能说明、每个设置项的含义、以及两轮测试的复验记录，在源码仓库的 `发布版/使用说明.md`，共十二节。
 
 ## 版本
 
-当前 0.1.0，构建于 2026-10-01 17:39。
+当前 0.2.0，构建于 2026-10-01 22:25。新增"纯 JS 页面"一档设置：正文靠脚本现拼的页面用系统自带的浏览器内核在屏幕外渲染后取全文，不额外装浏览器。0.1.0 的安装版与 msi 仍留在开发机的 `发布版/存档_0.1.0/`（那份免安装单文件在本地被这一版同名覆盖），要下旧版直接从 Release v0.1.0 取三件。
 
 ## 已知边界
 
 - 需要登录才能看到的页面抓不到，它不带你的 cookie。
-- 纯 JS 渲染出来的内容（整页靠前端脚本现拼的）抓不全，这类站以静态 HTML 为主时没问题。
+- 纯 JS 渲染的页面靠系统自带的 WebView2 内核在屏幕外跑脚本取正文，设置里默认"认出空壳才渲染"；提交表单那种站内搜索（POST）取不到，渲染超时或失败的站会如实标成"有盲区"。
 - 反爬严格的站可能返回 403 或验证码，软件会把失败如实报在扫描记录里，不会伪造结果。
